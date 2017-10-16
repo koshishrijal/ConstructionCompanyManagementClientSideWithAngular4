@@ -1,0 +1,40 @@
+
+
+<div class="container" [hidden]="submitted">
+    <h1></h1>
+            <div class="panel panel-primary">
+                    <div class="panel-heading">{{pageTitle}}</div>
+                    <div class="panel-body">
+                            <form #assetForm="ngForm" (ngSubmit)="onSubmit()" >
+                                    <div class="form-group">
+                                      <label for="adminName">Admin Name</label>
+                                      <input type="text" class="form-control" id="adminName" placeholder="Enter Name" 
+                                      name="adminName" required="required"
+                                       [(ngModel)]="admin.adminName" >
+                                    </div>
+                                   test: {{admin.adminName}}
+                                    <div class="form-group">
+                                      <label for="password">Password</label>
+                                      <input type="password" class="form-control" id="password" placeholder="Enter password"
+                                       name="password" required
+                                       [(ngModel)]="admin.password"     >
+                                    </div>
+                                      test:  {{admin.password}}
+                                                      <select name="role" for="role" required [(ngModel)]="admin.role"  >
+                                                                <option value="" id="role">Select Role</option>
+                                
+                                                                <option value="ceo">CEO</option>    
+                                                                <option value="admin">ADMIN</option>    
+                                                               
+                                
+                                
+                                                            </select>
+                                type:  {{admin.role}}
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                  </form>
+    
+    
+                    </div>
+            </div>
+    
+    </div>

@@ -1,0 +1,72 @@
+<div class="container-fluid" [hidden]="submitted">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">{{pageTitle}}</div>
+        <div class="panel-body">
+            <form #assetForm="ngForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="clientName">Name</label>
+                    <input type="text" class="form-control" id="clientName" placeholder="Enter Client Name" name="clientName" required="required"
+                        [(ngModel)]="ordeer.clientName">
+                </div>
+                test: {{ordeer.clientName}}
+                <div class="form-group">
+                    <label for="description">Address</label>
+                    <input type="text" class="form-control" id="description" placeholder="Enter Address" name="address" required [(ngModel)]="ordeer.address">
+                </div>
+                test: {{ordeer.address}}
+
+             
+                <div class="form-group">
+                    <label for="description">Site Location</label>
+                    <input type="text" class="form-control" id="siteLoaction" placeholder="Enter Site Loiaction" name="siteLocation" required
+                        [(ngModel)]="ordeer.siteLocation">
+                </div>
+                test: {{ordeer.siteLocation}}
+
+                <div class="form-group">
+                    <label for="projectDetail">Project Details</label>
+                    <input type="text" class="form-control" id="projectDetail" placeholder="Enter Address" name="projectDetail" required [(ngModel)]="ordeer.projectDetail">
+                </div>
+                test: {{ordeer.projectDetail}}
+
+                <div class="form-group">
+                    <label for="timeForCompletionInMonth">Time For Completion In Month</label>
+                    <input type="text" class="form-control" id="timeForCompletionInMonth" placeholder="Enter Address" name="timeForCompletionInMonth"
+                        required [(ngModel)]="ordeer.timeForCompletionInMonth">
+                </div>
+                test: {{ordeer.timeForCompletionInMonth}}
+
+                <div class="form-group">
+                    <label for="description">Client Phone Number</label>
+                    <input type="text" class="form-control" id="clientPhoneNumber" placeholder="Enter Address" name="clientPhoneNumber" required
+                        [(ngModel)]="ordeer.clientPhoneNumber">
+                </div>
+                test: {{ordeer.clientPhoneNumber}}
+                <div class="form-group">
+                    <label for="clientEmail">Client  Email</label>
+                    <input type="text" class="form-control" id="clientEmail" placeholder="Enter Address" name="clientEmail" required="required"
+                        [(ngModel)]="ordeer.clientEmail">
+                </div>
+                test: {{ordeer.clientEmail}}
+                <div class="form-group">
+                    <label for="dateToStart">Date to Start</label>
+                    <input type="date" class="form-control" id="dateToStart" placeholder="Enter Address" name="dateToStart" required [(ngModel)]="ordeer.dateToStart">
+                </div>
+                test: {{ordeer.dateToStart}}
+
+
+
+                <select name="serviceId" for="serviceId" required [(ngModel)]="ordeer.service.serviceId">
+                                                                    <option  *ngFor="let service of services" [value]=service.serviceId id="type">{{service.serviceId}}</option>
+                                                                    
+                                                                </select>
+                                                                type:{{ ordeer.service.serviceId}}
+                <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+
+
+        </div>
+    </div>
+
+</div>

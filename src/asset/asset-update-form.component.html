@@ -1,0 +1,42 @@
+
+
+<div class="container-fluid" [hidden]="submitted">
+        
+                <div class="panel panel-primary">
+                        <div class="panel-heading">{{pageTitle}}</div>
+                        <div class="panel-body">
+                                <form #assetForm="ngForm" (ngSubmit)="onSubmit()" >
+                                        <div class="form-group">
+                                          <label for="name">Name</label>
+                                          <input type="text" class="form-control" id="name" placeholder="Enter Name" 
+                                          name="name" required="required"
+                                           [(ngModel)]="asset.name"  >
+                                        </div>
+                                       test: {{asset.name}}
+                                        <div class="form-group">
+                                          <label for="monetoryValue">Monetary Value:</label>
+                                          <input type="number" class="form-control" id="monetoryValue" placeholder="Enter Monetary Value"
+                                           name="monetoryValue" required
+                                           [(ngModel)]="asset.monetoryValue"     >
+                                        </div>
+                                          test:  {{asset.monetoryValue}}
+                                                          <select name="type" for="type" required [(ngModel)]="asset.type"  >
+                                                                    <option value="" id="type">Select Type</option>
+                                    
+                                                                    <option value="land">land</option>    
+                                                                    <option value="vehicle">vehicle</option>    
+                                                                    <option value="goods">goods</option>    
+                                                                    <option value="money">money</option>    
+                                                                    <option value="others">others</option>   
+                                    
+                                    
+                                                                </select>
+                                    type:  {{asset.type}}
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                      </form>
+        
+        
+                        </div>
+                </div>
+        
+        </div>

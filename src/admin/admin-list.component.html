@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Admin List</div>
+        <div class="panel-body">
+            <router-outlet></router-outlet>
+             
+            <table class="table table-bordered" *ngIf="admins.length>0">
+                <thead>
+                    <tr>
+                        <th>admin Id</th>
+                        <th>Admin Name</th>
+                        <th>Email</th>
+                        <th>Password </th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let admin of admins">
+                        <td>{{admin.adminId}}</td>
+                        <td>{{admin.adminName}}</td>
+                        <td>{{admin.email}}</td>
+                        <td>{{admin.password}}</td>
+                        <td>{{admin.role | uppercase}}</td>
+                        <td [routerLink]="['/admins/update',admin.adminId]" ><button class="btn btn-success" >Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="onDeleteClicked(admin.adminId)">Delete</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Project List</div>
+        <div class="panel-body">
+           
+             
+            <table class="table table-bordered" *ngIf="projects.length>0">
+                <thead>
+                    <tr>
+                        <th>project Id</th>
+                        <th>Order Name</th>
+                        <th>Date Added</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let project of projects">
+                        <td>{{poduct.productId}}</td>
+                        <td>{{product.order.projectDetail}}</td>
+                        <td>{{product.dateAdded | date}}</td>
+                        <td>{{product.amount}}</td>
+                        <td>{{product.status}}</td>
+                        <td [routerLink]="['/projects/update',project.projectId]" ><button class="btn btn-success" >Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="onDeleteClicked(project.projectId)">Delete</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

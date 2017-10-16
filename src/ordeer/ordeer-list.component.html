@@ -1,0 +1,44 @@
+
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">{{pageTitle}}</div>
+        <div class="panel-body">
+           
+             
+            <table class="table table-bordered" *ngIf="ordeers.length>0">
+                <thead>
+                    <tr>
+                        <th>Ordeer Id</th>
+                        <th> Client Name</th>
+                        <th>date Added</th>
+                        <th>Address</th>
+                        <th>Site Location</th>
+                        <th>Project Details</th>
+                        <th>Time For Completion in MOnth</th>
+                        <th>date to start</th>
+                        <th>Client phone  number</th>
+                        <th>client email</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ordeer of ordeers">
+                        <td>{{ordeer.orderId}}</td>
+                        <td>{{ordeer.clientName}}</td>
+                        <td>{{ordeer.dateAdded | date}}</td>
+                        <td>{{ordeer.address}}</td>
+                        <td>{{ordeer.siteLocation}}</td>
+                        <td>{{ordeer.projectDetails}}</td>
+                        <td>{{ordeer.dateToStart | date}}</td>
+                        <td>{{ordeer.clientPhoneNumber}}</td>
+                        <td>{{ordeer.clientEmail}}</td>
+                        <td [routerLink]="['/ordeers/update',ordeer.orderId]" ><button class="btn btn-success" >Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="onDeleteClicked(service.serviceId)">Delete</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

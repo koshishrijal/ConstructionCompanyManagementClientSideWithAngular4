@@ -1,0 +1,39 @@
+
+
+<div class="container-fluid" [hidden]="submitted">
+    
+            <div class="panel panel-primary">
+                    <div class="panel-heading">{{pageTitle}}</div>
+                    <div class="panel-body">
+                            <form #assetForm="ngForm" (ngSubmit)="onSubmit()" >
+                                    <div class="form-group">
+                                      <label for="name">Name</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Enter Service Name" 
+                                      name="name" required="required"
+                                       [(ngModel)]="service.name"  >
+                                    </div>
+                                   test: {{service.name}}
+                                    <div class="form-group">
+                                      <label for="description">Description</label>
+                                      <input type="text" class="form-control" id="description" placeholder="Enter Description"
+                                       name="decsription" required
+                                       [(ngModel)]="service.description"     >
+                                    </div>
+                                      test:  {{service.description}}
+                                            
+                                      <div class="form-group">
+                                        <label for="status">Status</label>
+                                        <input type="checkbox" class="form-control" id="status"
+                                         name="status" required
+                                         [(ngModel)]="service.status"     >
+                                      </div>
+                                        test:  {{service.status}}
+                                         
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                  </form>
+    
+    
+                    </div>
+            </div>
+    
+    </div>

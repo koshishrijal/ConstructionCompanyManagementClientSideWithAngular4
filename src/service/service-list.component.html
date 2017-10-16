@@ -1,0 +1,35 @@
+
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">{{pageTitle}}</div>
+        <div class="panel-body">
+           
+             
+            <table class="table table-bordered" *ngIf="services.length>0">
+                <thead>
+                    <tr>
+                        <th>Service Id</th>
+                        <th> Name</th>
+                        <th>Date Added</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let service of services">
+                        <td>{{service.serviceId}}</td>
+                        <td>{{service.name}}</td>
+                        <td>{{service.dateAdded | date}}</td>
+                        <td>{{service.description}}</td>
+                        <td>{{service.status}}</td>
+                        <td [routerLink]="['/services/update',service.serviceId]" ><button class="btn btn-success" >Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="onDeleteClicked(service.serviceId)">Delete</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

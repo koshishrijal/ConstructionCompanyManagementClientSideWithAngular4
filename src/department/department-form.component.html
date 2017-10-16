@@ -1,0 +1,33 @@
+
+
+
+<div class="container-fluid" [hidden]="submitted">
+    
+            <div class="panel panel-primary">
+                    <div class="panel-heading">{{pageTitle}}</div>
+                    <div class="panel-body">
+                            <form #departmentForm="ngForm" (ngSubmit)="onSubmit()" >
+                                    <div class="form-group">
+                                      <label for="name">Name</label>
+                                      <input type="text" class="form-control" id="name" placeholder="Enter Name" 
+                                      name="name" required="required"
+                                       [(ngModel)]="department.name"  >
+                                    </div>
+                                   test: {{department.name}}
+                                    <div class="form-group">
+                                      <label for="payRate">Pay Rate:</label>
+                                      <input type="number" class="form-control" id="payRate" placeholder="Enter Pay rate"
+                                       name="payRate" required
+                                       [(ngModel)]="department.payRate"     >
+                                    </div>
+                                      test:  {{department.payRate}}
+                                            
+                       
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                  </form>
+    
+    
+                    </div>
+            </div>
+    
+    </div>

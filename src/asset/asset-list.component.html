@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Asset List</div>
+        <div class="panel-body">
+            <router-outlet></router-outlet>
+             
+            <table class="table table-bordered" *ngIf="assets.length>0">
+                <thead>
+                    <tr>
+                        <th>Asset Id</th>
+                        <th>AssetName</th>
+                        <th>Type</th>
+                        <th>Monetary Value</th>
+                        <th>Date Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let asset of assets">
+                        <td>{{asset.assetId}}</td>
+                        <td>{{asset.name}}</td>
+                        <td>{{asset.type}}</td>
+                        <td>{{asset.monetoryValue}}</td>
+                        <td>{{asset.dateAdded | date}}</td>
+                        <td [routerLink]="['/assets/update',asset.assetId]" ><button class="btn btn-success" >Edit</button></td>
+                        <td><button class="btn btn-danger" (click)="onDeleteClicked(asset.assetId)">Delete</button></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
